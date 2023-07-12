@@ -38,7 +38,7 @@ export default function Logo() {
 
   return (
     <form>
-      <div className="mt-2 flex justify-center rounded-lg hover:border border-dashed border-gray-900/25 p-6">
+      <div className="mt-2 flex justify-center rounded-lg border border-dashed border-white hover:border-gray-900/25 p-6">
         {previewURL ? (
           <div className="flex gap-4">
             <img src={previewURL} alt="logo" width="100px" height="auto" />

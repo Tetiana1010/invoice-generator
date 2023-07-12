@@ -12,8 +12,6 @@ export default function DataContainer() {
 
     const [issueDate, setIssueDate] = useState(formattedCurrentDate);
     const [dueDate, setDueDate] = useState(formattedFutureDate);
-
-    console.log(new Date().toISOString())
     return (
         <fieldset className="flex items-end flex-col gap-2">
             <label htmlFor="issue-date">
