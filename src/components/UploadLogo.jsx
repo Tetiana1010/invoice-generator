@@ -23,36 +23,28 @@ export default function Logo() {
     reader.readAsDataURL(logo);
   }
 
-//   const handleUpload = () => {
-//     if (selectedLogo) {
-//       console.log('Uploading file:', selectedLogo);
-//     } else {
-//       console.log('No file selected.');
-//     }
-//   };
-
   function handleLogoRemove() {
     setSelectedLogo('');
     localStorage.removeItem('uploadedLogo');
   }
 
   return (
-    <form>
-      <div className="mt-2 flex justify-center rounded-lg border border-dashed border-white hover:border-gray-900/25 p-6">
+    <form className='col-span-2'>
+      <div className="flex rounded-lg border border-dashed border-white hover:border-gray-900/25 p-6">
         {previewURL ? (
-          <div className="flex gap-4">
+          <div className="flex justify-start gap-4">
             <img src={previewURL} alt="logo" width="100px" height="auto" />
             <button onClick={handleLogoRemove} className='print:hidden'>
-              <TrashIcon className="mx-auto h-8 w-8 text-gray-300" aria-hidden="true" />
+              <TrashIcon className="mx-auto h-8 w-8 text-red-300" aria-hidden="true" />
             </button>
           </div>
         ) : (
-          <div className="text-center print:hidden">
+          <div className="flex flex-col justify-center text-center print:hidden">
             <PhotoIcon className="mx-auto h-12 w-12 text-gray-300" aria-hidden="true" />
             <div className="mt-4 flex text-sm leading-6 text-gray-600">
               <label
                 htmlFor="logo-upload"
-                className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
+                className="relative cursor-pointer rounded-md bg-white font-semibold text-green-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-white focus-within:ring-offset-2 hover:text-green-500"
               >
                 <span>Upload a logo</span>
                 <input

@@ -13,7 +13,7 @@ export default function DataContainer() {
     const [issueDate, setIssueDate] = useState(formattedCurrentDate);
     const [dueDate, setDueDate] = useState(formattedFutureDate);
     return (
-        <fieldset className="flex items-end flex-col gap-2">
+        <fieldset className="col-span-4 flex items-end flex-col gap-2">
             <label htmlFor="issue-date">
                 <span>Issue date:</span>
                 <input 

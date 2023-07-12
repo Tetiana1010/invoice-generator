@@ -18,10 +18,6 @@ export default function NewItemForm() {
   };
   const [formData, setFormData] = useState(initialFormData);
 
-  useEffect(() => {
-    calculateTotals();
-  }, [items]);
-
   const calculateTotals = () => {
     const currencyTotals = {};
     for (const item of items) {
@@ -32,6 +28,10 @@ export default function NewItemForm() {
     }
     setTotals(currencyTotals);
   };
+
+  useEffect(() => {
+    calculateTotals();
+  }, [items]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -76,7 +76,7 @@ export default function NewItemForm() {
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="col-span-full flex flex-col gap-4">
       <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 bg-slate-50 p-4 print:hidden">
         <button onClick={addNewItem}>+ Add new invoice item</button>
       </div>
@@ -84,7 +84,7 @@ export default function NewItemForm() {
         {table || items.length ? (
           <form className="border" onSubmit={handleSubmit}>
             <table className="w-full collapse-table">
-              <thead className="bg-indigo-500 text-white py-6 leading-10 rounded-lg">
+              <thead className="bg-green-500 text-white py-6 leading-10 rounded-lg">
                 <tr>
                   <th className="border">Name</th>
                   <th className="border">Quantity</th>
@@ -194,10 +194,10 @@ export default function NewItemForm() {
                     <td className="p-1 px-3">
                       <div className="flex justify-end gap-4">
                         <button onClick={hideTable}>
-                          <TrashIcon className="mx-auto h-6 w-6 text-indigo-500 hover:text-indigo-600" />
+                          <TrashIcon className="mx-auto h-6 w-6 text-red-500 hover:text-red-600" />
                         </button>
                         <button type="submit">
-                          <CheckIcon className="mx-auto h-6 w-6 text-indigo-500 hover:text-indigo-600" />
+                          <CheckIcon className="mx-auto h-6 w-6 text-green-500 hover:text-green-600" />
                         </button>
                       </div>
                     </td>
