@@ -10,8 +10,8 @@ import PrintButton from './components/PrintButton';
 function App() {
   const contentRef = useRef();
   return (
-    <main className='grid grid-cols-3 sm:grid-cols-6 gap-4 sm:gap-8 p-5 justify-between print:p-0 overflow-y-hidden' ref={contentRef}>
-      <h1 className='text-4xl col-span-full'>Invoice</h1>
+    <main className='grid grid-cols-3 sm:grid-cols-6 gap-4 sm:gap-8 p-3 sm:p-10 justify-between print:p-0 overflow-y-hidden' ref={contentRef}>
+      <h1 className='flex text-4xl col-span-full'>Invoice</h1>
         <UploadLogo />
         <DataContainer />
         <SenderForm />

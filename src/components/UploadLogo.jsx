@@ -29,7 +29,7 @@ export default function Logo() {
   }
 
   return (
-    <form className='col-span-2'>
+    <form className='col-span-3 flex w-full'>
       <div className="flex rounded-lg border border-dashed border-white hover:border-gray-900/25 p-6">
         {previewURL ? (
           <div className="flex justify-start gap-4">
